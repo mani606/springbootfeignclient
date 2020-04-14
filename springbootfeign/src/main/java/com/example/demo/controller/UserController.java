@@ -19,6 +19,11 @@ import com.example.demo.entity.Order;
 		@Autowired
 		OrderClient orderClient;
 		
+		@GetMapping("/info")
+		public String getInfo() {
+			return orderClient.getInfo();
+		}
+		
 		@GetMapping("")
 		public List<Order> getUserOrders() {
 
@@ -26,6 +31,7 @@ import com.example.demo.entity.Order;
 
 		}
 		
+				
 		@GetMapping("/{userId}")
 		public List<Order> getUserOrdersById(@PathVariable String userId) {
 			return orderClient.getAllById(userId);
